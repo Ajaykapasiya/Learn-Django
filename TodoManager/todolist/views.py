@@ -3,8 +3,5 @@ from django.http import HttpResponse,JsonResponse
 
 
 def todolist(request):
-    data = {
-        "name":"Ram",
-        "loction":"kise ko ni pta ",
-    }
-    return JsonResponse(data)
+  
+    return render(request, "main.html", {})
