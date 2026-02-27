@@ -7,8 +7,7 @@ def hompage(request):
     return render(request, "main.html", {})
 
 def todolist(request):
-  
-    return render(request, "todolist.html", {})
+    return render(request, "todolist.html")
 
 
 def contact(request):
