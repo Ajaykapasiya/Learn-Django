@@ -10,10 +10,11 @@ Welcome to TaskList page
 {% endblock headline %}
 
 {% block content %}
-  <table class="table">
-  <thead>
+<div class = 'container'>
+  <table class="table table-bordered"  >
+  <thead class= "table-dark">
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">S.No</th>
       <th scope="col">Task Name</th>
       <th scope="col">Status</th>
       <th scope="col">Edit</th>
@@ -21,25 +22,26 @@ Welcome to TaskList page
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    {% for task in all_tasks %}
+    {% if task.is_completed  %}
+    <tr class="table-success">
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{task.task}}</td>
+      <td>Completed</td>
+      <td>Edit</td>
       <td>Delete</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+    {% else %}
+     <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{task.task}}</td>
+      <td>Not Completed</td>
+      <td>Edit</td>
+      <td>Delete</td>
     </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>John</td>
-      <td>Doe</td>
-      <td>@social</td>
-    </tr>
+    {% endif %}
+    {% endfor %}
+    
   </tbody>
 </table>
 
