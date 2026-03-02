@@ -41,4 +41,9 @@ def delete(request, task_id):
 
 
 def edit(request,task_id):
-    pass
+    task_obj = Task.objects.get(id=task_id)
+    context = {
+        'task_obj': task_obj
+        
+    }
+    return render(request, "edit.html",context)
