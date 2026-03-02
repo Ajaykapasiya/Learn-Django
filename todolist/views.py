@@ -42,8 +42,15 @@ def delete(request, task_id):
 
 def edit(request,task_id):
     task_obj = Task.objects.get(id=task_id)
-    context = {
+    if request.method == 'POST':
+        form_data=TaskForm(request.POST or None,instance=task_obj)
+        if form_data.is_valid():
+         form_data.save()
+         messages.success(request,"Task Updated!")
+         return redirect('todolist')
+    else:   
+     context = {
         'task_obj': task_obj
         
-    }
+     }
     return render(request, "edit.html",context)

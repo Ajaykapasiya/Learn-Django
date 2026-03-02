@@ -44,14 +44,14 @@ Welcome to TaskList page
     <tr class="table-success">
       <td>{{task.id}} | {{task.task}}</td>
       <td>Completed</td>
-      <td>Edit</td>
+      <td><a href="{% url 'edit' task.id %}">Edit</a></td>
       <td><a href="{% url 'delete' task.id  %}">Delete</a></td>
     </tr>
     {% else %}
      <tr>
       <td>{{task.id}} | {{task.task}}</td>
       <td>Not Completed</td>
-      <td>Edit</td>
+      <td><a href="{% url 'edit' task.id %}">Edit</a></td> 
       <td><a href="{% url 'delete' task.id  %}">Delete</a></td>
     </tr>
     {% endif %}
