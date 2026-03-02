@@ -33,7 +33,7 @@ Welcome to TaskList page
   <thead class= "table-dark">
     <tr>
       <th scope="col">Task Name</th>
-      <th scope="col">Status</th>
+      <th scope="col">Done</th>
       <th scope="col">Edit</th>
       <th scope="col">Delete</th>
     </tr>
@@ -43,14 +43,14 @@ Welcome to TaskList page
     {% if task.is_completed  %}
     <tr class="table-success">
       <td>{{task.id}} | {{task.task}}</td>
-      <td>Completed</td>
+      <td><a href="{% url 'edit' task.id %}">Mark as Pending</a></td>
       <td><a href="{% url 'edit' task.id %}">Edit</a></td>
       <td><a href="{% url 'delete' task.id  %}">Delete</a></td>
     </tr>
     {% else %}
      <tr>
       <td>{{task.id}} | {{task.task}}</td>
-      <td>Not Completed</td>
+      <td><a href="{% url 'edit' task.id %}">Mark as Completed</a></td>
       <td><a href="{% url 'edit' task.id %}">Edit</a></td> 
       <td><a href="{% url 'delete' task.id  %}">Delete</a></td>
     </tr>

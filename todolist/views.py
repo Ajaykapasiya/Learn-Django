@@ -65,5 +65,10 @@ def complete(request, task_id):
 
 
 def pending(request, task_id):
-    task_obj=Task.object(id=task_id)
+    task_obj=Task.objects.get(id=task_id)
+    task_obj.is_completed = False
+    task_obj.save()
+    messages.success(request,"Task is completed!")
+    return redirect('todolist')
+
     
