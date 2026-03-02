@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse,JsonResponse
 from todolist.models import Task
 from todolist.forms import TaskForm
+from django.contrib import messages 
 
 def hompage(request):
   
