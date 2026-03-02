@@ -54,3 +54,7 @@ def edit(request,task_id):
         
      }
     return render(request, "edit.html",context)
+
+
+def complete(request, task_id):
+    
