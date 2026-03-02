@@ -14,7 +14,9 @@ def todolist(request):
        form_data = TaskForm(request.POST or None)
        if form_data.is_valid():
         form_data.save()
+        messages.success(request,"Task added successfully!")
         return redirect('todolist')
+    messages.success(request,"Something Went Wrong!")
     all_task = Task.objects.all()
     context = {
         'page':'todolist',
