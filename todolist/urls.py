@@ -5,5 +5,7 @@ urlpatterns = [
     path('',views.hompage,name="homepage"),
     path('todolist/',views.todolist,name="todolist"),
     path('contact/',views.contact,name="contact"),
-    path('about/',views.about,name="about"), 
+    path('about/',views.about,name="about"),
+    path('delete/<task_id>',views.delete,name="delete")
+    path('edit/<task_id>',views.edit,name="edit")
 ] 

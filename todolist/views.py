@@ -16,7 +16,7 @@ def todolist(request):
         form_data.save()
         messages.success(request,"Task added successfully!")
         return redirect('todolist')
-    messages.success(request,"Something Went Wrong!")
+       messages.error(request,"Something Went Wrong!")
     all_task = Task.objects.all()
     context = {
         'page':'todolist',
@@ -32,3 +32,9 @@ def contact(request):
 def about(request):
   
     return render(request, "about.html", {})
+
+def delete(request, task_id):
+    task_obj = Task.objects.get(id=task_id)
+    task_obj.delete()
+    messages.success(request,f"Task {task_obj} is deleted!")
+    return redirect("todolist")
