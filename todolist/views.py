@@ -38,3 +38,7 @@ def delete(request, task_id):
     task_obj.delete()
     messages.success(request,f"Task {task_obj} is deleted!")
     return redirect("todolist")
+
+
+def edit(request,task_id):
+    pass

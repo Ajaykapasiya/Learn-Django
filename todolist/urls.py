@@ -6,6 +6,6 @@ urlpatterns = [
     path('todolist/',views.todolist,name="todolist"),
     path('contact/',views.contact,name="contact"),
     path('about/',views.about,name="about"),
-    path('delete/<task_id>',views.delete,name="delete")
+    path('delete/<task_id>',views.delete,name="delete"),
     path('edit/<task_id>',views.edit,name="edit")
 ] 
