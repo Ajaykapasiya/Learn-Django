@@ -3,6 +3,7 @@ from django.http import HttpResponse,JsonResponse
 from todolist.models import Task
 from todolist.forms import TaskForm
 from django.contrib import messages 
+from django.core.paginator import Paginator
 
 def hompage(request):
   
