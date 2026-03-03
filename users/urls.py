@@ -1,15 +1,6 @@
 from django.urls import path,include
-from todolist import views
+from users import views as user_views
 
 urlpatterns = [
-    path('',views.hompage,name="homepage"),
-    path('todolist/',views.todolist,name="todolist"),
-    path('contact/',views.contact,name="contact"),
-    path('about/',views.about,name="about"),
-    path('todolist/delete/<task_id>',views.delete,name="delete"),
-    path('todolist/edit/<task_id>',views.edit,name="edit"),
-    path('todolist/complete/<task_id>',views.complete,name="complete"),
-    path('todolist/pending/<task_id>',views.pending,name="pending")
-
-
+  path("register/", user_views.register,name="register")
 ] 
