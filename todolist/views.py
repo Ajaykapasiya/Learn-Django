@@ -19,6 +19,10 @@ def todolist(request):
         return redirect('todolist')
        messages.error(request,"Something Went Wrong!")
     all_task = Task.objects.all()
+    paginator=Paginator(all_task,5)
+    page = request.GET.get("page")
+    
+    all_task = paginator.get_page(page)
     context = {
         'page':'todolist',
         'all_tasks':all_task
