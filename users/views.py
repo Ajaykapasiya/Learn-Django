@@ -1,11 +1,11 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from django.contrib.auth.forms import UserCreationForm
+from .forms import CustomRegistrationForm
 from django.contrib import messages
 
 def register(request):
     if request.method == "POST":
-        register_form = UserCreationForm(request.POST)
+        register_form = CustomRegistrationForm(request.POST)
         print(request.POST)
         if register_form.is_valid():
             register_form.save() 
@@ -13,5 +13,5 @@ def register(request):
             return redirect("todolist")
         
     else:
-        register_form  = UserCreationForm() 
+        register_form  = CustomRegistrationForm() 
     return render(request, 'register.html',{'register_form':register_form})
