@@ -43,7 +43,7 @@ Welcome to TaskList page
     {% if task.is_completed  %}
     <tr class="table-success row">
       <td class="col-7">{{task.task}}</td>
-      <td class="col-3"><a href="{% url 'pending' task.id %}"><button type="button" class="btn btn-success">Mark As Pending</button>
+      <td class="col-3"><a href="{% url 'pending' task.id %}"><button type="button" class="btn btn-secondary">Mark As Pending</button>
 </a></td>
       <td class="col-1"><a href="{% url 'edit' task.id %}"><button type="button" class="btn btn-warning">Edit</button>
 </a></td>

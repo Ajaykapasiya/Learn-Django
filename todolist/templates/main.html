@@ -1,10 +1,31 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
 Home page
-{% endblock  %}
-
+{% endblock %}
 
 {% block headline %}
 Welcome to Home page
 {% endblock headline %}
+
+{% block content %} 
+<div class="container">
+
+    <img src="{% static 'image/notes.jpeg' %}" 
+         alt="Notes Image" 
+         class="img-fluid mt-3" 
+         style="height:200px; width:100%; object-fit:cover;">
+
+    <div class="text-center mt-5">
+        <p class="h1">Quick and Easy to Access Tasks</p>
+        <p class="h4">Stay organized. Stay productive</p>
+        <p>Small steps every day lead to big results.</p>
+
+        <a href="{% url 'todolist' %}" class="btn btn-primary mt-3">
+            Get Started
+        </a>
+    </div>
+
+</div>
+{% endblock content %}

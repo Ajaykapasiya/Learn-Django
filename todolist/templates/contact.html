@@ -1,9 +1,55 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block title %}
 Contact page
-{% endblock  %}
-
+{% endblock %}
 
 {% block headline %}
 Welcome to Contact page
 {% endblock headline %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <div class="card shadow-lg p-4 rounded-4">
+                <h2 class="text-center mb-4">Get In Touch</h2>
+
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" placeholder="Enter your name">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email address</label>
+                        <input type="email" class="form-control" placeholder="Enter your email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" rows="4" placeholder="Write your message"></textarea>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary px-4">
+                            Send Message
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}

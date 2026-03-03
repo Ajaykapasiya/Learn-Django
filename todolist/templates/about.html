@@ -1,9 +1,74 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
-About page
-{% endblock  %}
+About Us
+{% endblock %}
 
 {% block headline %}
-Welcome to About page
+Welcome to About Us Page
 {% endblock headline %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <!-- Hero Section -->
+    <div class="text-center mb-5">
+        <h1 class="fw-bold">About Our Task Manager</h1>
+        <p class="lead text-muted">
+            Helping you stay organized and productive every single day.
+        </p>
+    </div>
+
+    <!-- About Section -->
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <img src="{% static 'image/notes.jpg' %}" 
+                 class="img-fluid rounded-4 shadow" 
+                 alt="About Image">
+        </div>
+
+        <div class="col-md-6">
+            <h3 class="fw-semibold">Who We Are</h3>
+            <p class="text-muted">
+                Our platform is designed to simplify your daily tasks.
+                We believe that small organized steps lead to big success.
+                Whether you are a student or professional, managing tasks
+                efficiently helps you achieve your goals faster.
+            </p>
+            <p class="text-muted">
+                Built with simplicity and productivity in mind.
+            </p>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="row text-center mt-5">
+
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 rounded-4">
+                <h4>Easy to Use</h4>
+                <p class="text-muted">Simple interface for quick task management.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 rounded-4">
+                <h4>Fast & Secure</h4>
+                <p class="text-muted">Your tasks are stored safely and securely.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 rounded-4">
+                <h4>Stay Productive</h4>
+                <p class="text-muted">Track and manage your daily progress easily.</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock content %}
