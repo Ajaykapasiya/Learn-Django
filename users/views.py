@@ -6,6 +6,7 @@ from django.contrib import messages
 def register(request):
     if request.method == "POST":
         register_form = UserCreationForm(request.POST)
+        print(request.POST)
         if register_form.is_valid():
             register_form.save() 
             messages.success(request,"User Created Successfully!")
