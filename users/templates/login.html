@@ -2,20 +2,20 @@
 {% load crispy_forms_tags %}
 
 {% block title %} 
-Registration Page 
+Login Page 
 {% endblock %} 
 
 {% block content %} 
 
 <div class="container py-5">
 
-    <p class="h2 text-center mb-4">Registration Form</p>
+    <p class="h2 text-center mb-4">Login Form</p>
     <hr>
 
     <form method="post" class="col-6">
         {% csrf_token %}
 
-        {{ register_form | crispy }}
+        {{ form | crispy }}
         <div class="text-center">
             <button type="submit" class="btn btn-primary">
                 Sign Up
