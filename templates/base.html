@@ -49,16 +49,25 @@
           </ul>
         
         </div>
-         {% if user.is_authenticated %} 
-         <div class="d-flex"> 
-          <div class="p-2 text-white"> 
-            {{user.username}} 
-          </div> 
-          <a href="{% url 'logout' %}" class="btn btn-outline-danger">Logout</a>
-         </div>
-          {% else %} 
-          <a href="{% url 'login' %}" class="btn btn-outline-primary">Login</a>
-          {% endif %}
+         {% if user.is_authenticated %}
+
+<div class="d-flex align-items-center">
+    <div class="p-2 text-white">
+        {{ user.username }}
+    </div>
+
+    <form action="{% url 'logout' %}" method="post" class="d-inline">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-outline-danger">Logout</button>
+    </form>
+
+</div>
+
+{% else %}
+
+<a href="{% url 'login' %}" class="btn btn-outline-primary">Login</a>
+
+{% endif %}
       </div>
     </nav>
   </head>
