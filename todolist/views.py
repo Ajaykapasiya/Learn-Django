@@ -15,11 +15,14 @@ def todolist(request):
     if request.method == "POST":
        form_data = TaskForm(request.POST or None)
        if form_data.is_valid():
-        form_data.save()
+        instance=form_data.save(commit=False)
+        instance.owner = request.user
+        instance.save()
         messages.success(request,"Task added successfully!")
         return redirect('todolist')
        messages.error(request,"Something Went Wrong!")
-    all_task = Task.objects.all()
+       
+    all_task = Task.objects.filter(owner=request.user)
     paginator=Paginator(all_task,5)
     page = request.GET.get("page")
     
