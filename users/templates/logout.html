@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %} 
+Logout Page 
+{% endblock %} 
+
+{% block content %} 
+
+<div class="container py-5">
+
+    <h2 class="fw-bold"> Thank you for using <span class="text-primary">Todo Manager </span></h2>
+    <a href="{% url "login" %}"><button type="button" class="btn btn-primary">Login Again </button></a>
+
+</div>
+
+{% endblock %}
+
