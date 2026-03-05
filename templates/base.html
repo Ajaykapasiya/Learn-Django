@@ -47,18 +47,18 @@
             </li>
             
           </ul>
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+        
         </div>
+         {% if user.is_authenticated %} 
+         <div class="d-flex"> 
+          <div class="p-2 text-white"> 
+            {{user.username}} 
+          </div> 
+          <a href="{% url 'logout' %}" class="btn btn-outline-danger">Logout</a>
+         </div>
+          {% else %} 
+          <a href="{% url 'login' %}" class="btn btn-outline-primary">Login</a>
+          {% endif %}
       </div>
     </nav>
   </head>
